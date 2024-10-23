@@ -1,8 +1,6 @@
 package tests;
 
 import com.example.Book;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class BookTest {
     // Create private Book object
