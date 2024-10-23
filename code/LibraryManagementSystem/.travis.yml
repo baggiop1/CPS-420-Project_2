@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - openjdk11
+
+before_script:
+  - sudo apt-get install -y ant
+
+script:
+  - ant test

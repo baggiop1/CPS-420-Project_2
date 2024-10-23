@@ -1,4 +1,4 @@
-package com.example;
+package com.example.library;
 
 /**
  * The Book class represents a book in the library system.
@@ -37,7 +37,10 @@ public class Book {
     }
 
     // Getters and Setters
-    public String getIsbn() { return isbn; }
+    public String getIsbn() {
+        return isbn;
+    }
+
     public void setIsbn(String isbn) {
         if (isbn == null || isbn.isEmpty()) {
             throw new IllegalArgumentException("ISBN cannot be empty.");
@@ -45,7 +48,10 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getTitle() { return title; }
+    public String getTitle() {
+        return title;
+    }
+
     public void setTitle(String title) {
         if (title == null || title.isEmpty()) {
             throw new IllegalArgumentException("Title cannot be empty.");
@@ -53,7 +59,10 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() { return author; }
+    public String getAuthor() {
+        return author;
+    }
+
     public void setAuthor(String author) {
         if (author == null || author.isEmpty()) {
             throw new IllegalArgumentException("Author cannot be empty.");
@@ -61,7 +70,10 @@ public class Book {
         this.author = author;
     }
 
-    public int getCopiesAvailable() { return copiesAvailable; }
+    public int getCopiesAvailable() {
+        return copiesAvailable;
+    }
+
     public void setCopiesAvailable(int copiesAvailable) {
         if (copiesAvailable < 0) {
             throw new IllegalArgumentException("Copies available cannot be negative.");

@@ -1,41 +1,39 @@
-<project name="LibraryProject" basedir="." default="test">
-    
+<project name="LibraryManagementSystem" basedir="." default="test">
+
     <!-- Initialize directories -->
     <target name="init">
         <mkdir dir="build/classes"/>
     </target>
 
-    <!-- Compile the main source files -->
+    <!-- Compile main source files -->
     <target name="compile" depends="init">
         <javac srcdir="src" destdir="build/classes">
-            <include name="com/example/**/*.java" />
+            <include name="com/example/library/**/*.java"/>
         </javac>
     </target>
 
-    <!-- Compile the test files -->
+    <!-- Compile test files -->
     <target name="compile-tests" depends="compile">
-        <javac srcdir="src/tests" destdir="build/classes">
+        <javac srcdir="tests" destdir="build/classes">
             <classpath>
                 <pathelement path="build/classes"/>
-                <pathelement path="lib/junit-platform-console-standalone-1.7.0.jar"/>
+                <pathelement path="lib/junit-platform-console-standalone-1.7.0.jar"/> <!-- JUnit Jar -->
             </classpath>
         </javac>
     </target>
 
     <!-- Run JUnit tests -->
     <target name="test" depends="compile-tests">
-        <junit printsummary="true">
+        <junit printsummary="true" haltonfailure="true">
             <classpath>
                 <pathelement path="build/classes"/>
-                <pathelement path="lib/junit-platform-console-standalone-1.7.0.jar"/>
+                <pathelement path="lib/junit-platform-console-standalone-1.7.0.jar"/> <!-- JUnit Jar -->
             </classpath>
-            <formatter type="plain" usefile="false"/>
             <batchtest>
-                <fileset dir="src/tests">
+                <fileset dir="tests">
                     <include name="**/*Test.java"/>
                 </fileset>
             </batchtest>
         </junit>
     </target>
-    
 </project>
