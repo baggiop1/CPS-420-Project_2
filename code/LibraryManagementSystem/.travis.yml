@@ -1,9 +1,23 @@
 language: java
+
+# Specify JDK version
 jdk:
   - openjdk11
 
+# Build using Ant
 before_script:
-  - sudo apt-get install -y ant
+  - ant compile
 
+# Run tests
 script:
   - ant test
+
+# Configure GitHub Releases deployment
+deploy:
+  provider: releases
+  api_key: $TRAVIS_CI_TOKEN  # Reference to the GitHub token set in Travis CI
+  file: build/artifact.jar
+  skip_cleanup: true
+  on:
+    tags: true  # Only deploy on tagged commits
+    repo: baggiop1/CPS-420-Project_2
