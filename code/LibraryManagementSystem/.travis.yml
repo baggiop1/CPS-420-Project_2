@@ -10,6 +10,7 @@ before_script:
 
 # Run tests
 script:
+  - ant build
   - ant test
 
 # Configure GitHub Releases deployment

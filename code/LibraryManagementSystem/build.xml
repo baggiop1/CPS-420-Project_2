@@ -1,4 +1,4 @@
-<project name="LibraryManagementSystem" basedir="." default="test">
+<project name="LibraryManagementSystem" default="build">
 
     <!-- Initialize directories -->
     <target name="init">
