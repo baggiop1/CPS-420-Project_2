@@ -9,7 +9,7 @@
     <!-- Compile main source files -->
     <target name="compile" depends="init">
         <javac srcdir="src" destdir="build/classes">
-            <include name="com/example/library/**/*.java"/>
+            <include name="com/example/library/*.java"/>
         </javac>
     </target>
 
