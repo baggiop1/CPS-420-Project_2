@@ -2,22 +2,22 @@
 
     <!-- Initialize directories -->
     <target name="init">
-        <mkdir dir="build/classes"/>
-        <mkdir dir="build/classes/tests"/>
+        <mkdir dir="lib"/>
+        <mkdir dir="src"/>
     </target>
 
     <!-- Compile main source files -->
     <target name="compile" depends="init">
-        <javac srcdir="src" destdir="build/classes">
-            <include name="com/example/library/*.java"/>
+        <javac srcdir="src" destdir="lib">
+            <include name="src/*.java"/>
         </javac>
     </target>
 
     <!-- Compile test files -->
     <target name="compile-tests" depends="compile">
-        <javac srcdir="tests" destdir="build/classes/tests">
+        <javac srcdir="src" destdir="src">
             <classpath>
-                <pathelement path="build/classes/tests"/>
+                <pathelement path="src"/>
                 <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
             </classpath>
         </javac>
@@ -27,11 +27,11 @@
     <target name="test" depends="compile-tests">
         <junit printsummary="true" haltonfailure="true">
             <classpath>
-                <pathelement path="build/classes/tests"/>
+                <pathelement path="src"/>
                 <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
             </classpath>
             <batchtest>
-                <fileset dir="tests">
+                <fileset dir="src">
                     <include name="**/*Test.java"/>
                 </fileset>
             </batchtest>
