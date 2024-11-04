@@ -18,7 +18,7 @@
         <javac srcdir="tests" destdir="build/classes/tests">
             <classpath>
                 <pathelement path="build/classes/tests"/>
-                <pathelement path="CPS-420-Project_2/code/LibraryManagementSystem/junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
+                <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
             </classpath>
         </javac>
     </target>
@@ -27,8 +27,8 @@
     <target name="test" depends="compile-tests">
         <junit printsummary="true" haltonfailure="true">
             <classpath>
-                <pathelement path="CPS-420-Project_2/code/LibraryManagementSystem/tests"/>
-                <pathelement path="CPS-420-Project_2/code/LibraryManagementSystem/junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
+                <pathelement path="build/classes/tests"/>
+                <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
             </classpath>
             <batchtest>
                 <fileset dir="tests">
