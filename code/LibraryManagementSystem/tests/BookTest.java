@@ -1,9 +1,7 @@
-package tests;
+package com.example.library;
 
-import com.example.library.Book;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BookTest {

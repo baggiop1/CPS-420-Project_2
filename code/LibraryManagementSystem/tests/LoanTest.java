@@ -16,11 +16,10 @@ class LoanTest {
 
     @BeforeEach
     void setUp() {
-     
+
         mockMember = mock(Member.class);
         mockBook = mock(Book.class);
 
-     
         when(mockMember.getName()).thenReturn("John Doe");
         when(mockBook.getTitle()).thenReturn("Test Driven Development");
 
