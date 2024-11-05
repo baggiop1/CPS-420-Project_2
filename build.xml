@@ -4,21 +4,23 @@
     <target name="init">
         <mkdir dir="lib"/>
         <mkdir dir="src"/>
+        <mkdir dir="src/tests"/>
     </target>
 
     <!-- Compile main source files -->
     <target name="compile" depends="init">
-        <javac srcdir="src" destdir="lib">
+        <javac srcdir="src" destdir="lib" includeantruntime="false">
             <include name="src/*.java"/>
         </javac>
     </target>
 
     <!-- Compile test files -->
     <target name="compile-tests" depends="compile">
-        <javac srcdir="src" destdir="src">
+        <javac srcdir="src" destdir="src" includeantruntime="false">
             <classpath>
                 <pathelement path="src"/>
                 <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
+                <pathelement path="mockito-core-5.14.2.jar"/>
             </classpath>
         </javac>
     </target>
@@ -29,6 +31,7 @@
             <classpath>
                 <pathelement path="src"/>
                 <pathelement path="junit-platform-console-standalone-1.11.3.jar"/> <!-- JUnit Jar -->
+                <pathelement path="mockito-core-5.14.2.jar"/>
             </classpath>
             <batchtest>
                 <fileset dir="src">
